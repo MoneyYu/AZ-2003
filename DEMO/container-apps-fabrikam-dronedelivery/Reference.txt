@@ -1,0 +1,4 @@
+# Deploy microservices with Azure Container Apps
+https://learn.microsoft.com/zh-tw/azure/architecture/example-scenario/serverless/microservices-with-container-apps
+
+https://github.com/mspnp/container-apps-fabrikam-dronedelivery?tab=readme-ov-file
