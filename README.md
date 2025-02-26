@@ -22,6 +22,8 @@ Course Survey: [https://aka.ms/az2003survey](https://aka.ms/az2003survey)
 [Course AZ-2003 正體中文版本](https://learn.microsoft.com/zh-tw/training/paths/deploy-cloud-native-applications-to-azure-container-apps/)
 
 ## Infos
+[Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/)
+
 [ESI Support](https://aka.ms/esisupport)
 
 ![](https://mdcontent.yu.money/contents/upload_784471d79beca6b09414415af752078a.png)
