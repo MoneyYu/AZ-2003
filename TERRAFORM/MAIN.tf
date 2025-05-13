@@ -118,3 +118,12 @@ resource "azurerm_resource_group" "rg" {
     environment = local.group_name
   }
 }
+
+resource "azurerm_resource_group" "demo" {
+  name     = "Demo${var.group_postfix}"
+  location = local.location
+
+  tags = {
+    environment = local.group_name
+  }
+}
