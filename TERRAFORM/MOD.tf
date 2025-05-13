@@ -10,12 +10,16 @@ resource "azurerm_container_registry" "lab" {
   georeplications {
     location                = "East US"
     zone_redundancy_enabled = true
-    tags                    = {}
+    tags = {
+      environment = local.group_name
+    }
   }
   georeplications {
     location                = "North Europe"
     zone_redundancy_enabled = true
-    tags                    = {}
+    tags = {
+      environment = local.group_name
+    }
   }
 
   tags = {

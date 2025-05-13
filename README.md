@@ -8,8 +8,8 @@ GA: G-DXYJBX6BH8
 
 ## Course
 :::success
-Date: 20250226
-Course ID: 75203
+Date: 20250513
+Course ID: 79868
 :::
 
 :::info
@@ -33,17 +33,13 @@ Course Survey: [https://aka.ms/az2003survey](https://aka.ms/az2003survey)
 ### Skillable lab system
 [ESI Labs](https://aka.ms/esilab)
 :::success
-Training key: 6BC47A018E33426E
+Training key: F5504507628243E1
 :::
 
 :::info
 Only need to redeem once
 Valid for 6 months
 :::
-
-<!--
-Turtoial Video: https://media.yu.money/common/lods.html
--->
 
 ### Instruction
 [AZ-2003 Labs EN](https://microsoftlearning.github.io/az-2003-deploy-cloud-native-applications-using-azure-container-apps/)
@@ -59,6 +55,10 @@ Turtoial Video: https://media.yu.money/common/lods.html
 
 
 ## Links
+[What is Cloud Native?](https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition)
+
+[Introduction to cloud-native applications](https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/introduction)
+
 ### Container Registry
 [Azure Container Registry service tiers](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-skus)
 
@@ -67,6 +67,10 @@ Turtoial Video: https://media.yu.money/common/lods.html
 [Make Azure container registry content publicly available](https://docs.microsoft.com/en-us/azure/container-registry/anonymous-pull-access)
 
 [Deploy docker image locally](https://code.visualstudio.com/docs/containers/quickstart-aspnet-core)
+
+[Azure Container Registry roles directory reference](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-rbac-built-in-roles-directory-reference?tabs=registries-configured-with-rbac-registry-permissions)
+
+[Microsoft Entra attribute-based access control (ABAC) for repository permissions (Preview)](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-rbac-abac-repository-permissions?tabs=azure-portal)
 
 ### Azure Container App
 [Azure Container Apps overview](https://learn.microsoft.com/en-us/azure/container-apps/overview)
@@ -105,25 +109,25 @@ Turtoial Video: https://media.yu.money/common/lods.html
 
 [Jobs in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/jobs?tabs=azure-cli)
 
+[ACA vs AKS: Which Azure Service Is Better for Running Containers?](https://techcommunity.microsoft.com/t5/startups-at-microsoft/aca-vs-aks-which-azure-service-is-better-for-running-containers/ba-p/3815164)
+
+[Reducing cold-start time on Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/cold-start)
+
+#### Networking
+[Networking in Azure Container Apps environment](https://learn.microsoft.com/en-us/azure/container-apps/networking?tabs=workload-profiles-env%2Cazure-cli)
+
+[Ingress in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/ingress-overview)
+
+[Protect Azure Container Apps with Web Application Firewall on Application Gateway](https://learn.microsoft.com/en-us/azure/container-apps/waf-app-gateway?tabs=default-domain)
+
+[Use Nginx as a reverse proxy in Azure Container App](https://techcommunity.microsoft.com/blog/appsonazureblog/use-nginx-as-a-reverse-proxy-in-azure-container-app/3870513)
+
+#### Scaling
 [Set scaling rules in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/scale-app?pivots=azure-cli)
 
 [Scaling options in Azure Container Apps](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/scaling-options-in-azure-container-apps/ba-p/3878282)
 
 [Scale Dapr applications with KEDA scalers](https://learn.microsoft.com/en-us/azure/container-apps/dapr-keda-scaling)
-
-[ACA vs AKS: Which Azure Service Is Better for Running Containers?](https://techcommunity.microsoft.com/t5/startups-at-microsoft/aca-vs-aks-which-azure-service-is-better-for-running-containers/ba-p/3815164)
-
-[Networking in Azure Container Apps environment](https://learn.microsoft.com/en-us/azure/container-apps/networking?tabs=workload-profiles-env%2Cazure-cli)
-
-[Ingress in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/ingress-overview)
-
-<!--
-## Whiteboard
-### Whiteboard
-
-
-### OneNotes
--->
 
 ## Credential
 [AZ-2003 Applied Skills Credential](https://learn.microsoft.com/en-us/credentials/applied-skills/deploy-cloud-native-apps-using-azure-container-apps/)
