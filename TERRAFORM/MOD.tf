@@ -10,21 +10,17 @@ resource "azurerm_container_registry" "lab" {
   georeplications {
     location                = "East US"
     zone_redundancy_enabled = true
-    tags = {
-      environment = local.group_name
-    }
+
+    tags = local.default_tags
   }
   georeplications {
     location                = "North Europe"
     zone_redundancy_enabled = true
-    tags = {
-      environment = local.group_name
-    }
+
+    tags = local.default_tags
   }
 
-  tags = {
-    environment = local.group_name
-  }
+  tags = local.default_tags
 }
 
 ### Azure Container Instance
@@ -55,9 +51,7 @@ resource "azurerm_container_group" "lab" {
     memory = "1.5"
   }
 
-  tags = {
-    environment = local.group_name
-  }
+  tags = local.default_tags
 }
 
 ### Azure Container App
@@ -68,9 +62,7 @@ resource "azurerm_log_analytics_workspace" "lab" {
   sku                 = "PerGB2018"
   retention_in_days   = 30
 
-  tags = {
-    environment = local.group_name
-  }
+  tags = local.default_tags
 }
 
 resource "azurerm_container_app_environment" "lab" {
@@ -79,9 +71,7 @@ resource "azurerm_container_app_environment" "lab" {
   resource_group_name        = azurerm_resource_group.rg.name
   log_analytics_workspace_id = azurerm_log_analytics_workspace.lab.id
 
-  tags = {
-    environment = local.group_name
-  }
+  tags = local.default_tags
 }
 
 resource "azurerm_container_app" "lab" {
@@ -99,7 +89,5 @@ resource "azurerm_container_app" "lab" {
     }
   }
 
-  tags = {
-    environment = local.group_name
-  }
+  tags = local.default_tags
 }

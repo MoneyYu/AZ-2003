@@ -4,7 +4,7 @@ terraform {
   required_providers {
     azapi = {
       source  = "azure/azapi"
-      version = "~>1.5"
+      version = "~>2.0"
     }
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -89,6 +89,11 @@ locals {
   lab15_name_with_postfix  = "${local.lab15_name}${local.random_str}"
   lab16_name_with_postfix  = "${local.lab16_name}${local.random_str}"
   vm_size                  = "Standard_B4ms"
+
+  default_tags = {
+    environment     = local.group_name
+    SecurityControl = "Ignore"
+  }
 }
 
 data "http" "myip" {
@@ -123,7 +128,5 @@ resource "azurerm_resource_group" "demo" {
   name     = "Demo${var.group_postfix}"
   location = local.location
 
-  tags = {
-    environment = local.group_name
-  }
+  tags = local.default_tags
 }
