@@ -89,6 +89,15 @@ resource "azurerm_container_app" "lab" {
   resource_group_name          = azurerm_resource_group.rg.name
   revision_mode                = "Single"
 
+  ingress {
+    external_enabled = true
+    target_port      = 80
+    traffic_weight {
+      percentage      = 100
+      latest_revision = true
+    }
+  }
+
   identity {
     type = "SystemAssigned"
   }
