@@ -89,6 +89,15 @@ resource "azurerm_container_app" "lab" {
   resource_group_name          = azurerm_resource_group.rg.name
   revision_mode                = "Single"
 
+  identity {
+    type = "SystemAssigned"
+  }
+
+  registry {
+    server   = azurerm_container_registry.lab.login_server
+    identity = "system"
+  }
+
   template {
     container {
       name   = "examplecontainerapp"
@@ -138,4 +147,15 @@ resource "azurerm_storage_share" "lab" {
   name                 = "labshare${local.random_str}"
   storage_account_name = azurerm_storage_account.lab.name
   quota                = 50
+}
+
+# Role assignment for Container App to pull images from ACR
+resource "azurerm_role_assignment" "aca_acr_pull" {
+  scope                = azurerm_container_registry.lab.id
+  role_definition_name = "AcrPull"
+  principal_id         = azurerm_container_app.lab.identity[0].principal_id
+
+  depends_on = [
+    azurerm_container_app.lab
+  ]
 }

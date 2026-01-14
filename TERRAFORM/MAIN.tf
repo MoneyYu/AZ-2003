@@ -43,7 +43,7 @@ variable "user_password" {
 locals {
   group_name = "AZ2003-${var.group_postfix}"
   location   = "japaneast"
-  random_str = "cat"
+  random_str = "gsd"
   # random_str               = random_string.rid.result
   lab_name                 = "lab"
   lab01_name               = "lab01"
