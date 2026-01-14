@@ -1,26 +1,26 @@
-# AZ-2003 富邦 ACA Demo｜All-in-One Bundle 使用指引
+# AZ-2003 富邦 ACA Demo｜使用指引
 
 > **更新日期**：2026-01-14
 
-## 🚀 你要從哪裡開始？
+## 🚀 開始 Demo
 
-### ⭐ 推薦：Portal 手動建資源
-**直接開** 👉 [`AZ2003_Fubon_ACA_Portal_DEMO_MASTER.md`](AZ2003_Fubon_ACA_Portal_DEMO_MASTER.md)
+### ⭐ 主要文件（必讀）
+**直接開** 👉 [`AZ2003_Fubon_ACA_COMPLETE_DEMO.md`](AZ2003_Fubon_ACA_COMPLETE_DEMO.md)
 
-這是**全整合版 Portal Demo Runbook**，涵蓋：
-- ✅ 用 Azure Portal 手動建立所有資源
+這是**完整整合版 Demo 指南**，涵蓋：
+- ✅ 富邦保險微服務場景故事背景
+- ✅ 16 個按順序的 Demo 步驟
 - ✅ ACA 10 大功能完整展示（Ingress / Dapr / Revisions / Traffic Split / Scale / Secrets / Volume / Jobs / Console / Logs）
-- ✅ 每個步驟的 Portal 路徑 + 設定值 + 講解重點
+- ✅ 每個步驟的「為什麼」、Portal 路徑、設定值、講解重點
+- ✅ 每個功能的優點與缺點分析
 - ✅ 常見問題排錯
+- ✅ 精簡版 Demo 流程（45-60 分鐘）
 
-### 其他文件（進階參考）
+### 進階參考（排錯/深入）
 | 文件 | 說明 |
 |------|------|
-| [`AZ2003_Fubon_ACA_Portal_Demo_Runbook.md`](AZ2003_Fubon_ACA_Portal_Demo_Runbook.md) | Portal Demo（舊版，部分內容） |
-| [`AZ2003_Fubon_ACA_LiveDemo_PS7_with_Volume_Integrated.md`](AZ2003_Fubon_ACA_LiveDemo_PS7_with_Volume_Integrated.md) | PowerShell 7 + az CLI 版本 |
-| [`AZ2003_Fubon_ACA_Volume_Demo_Addon.md`](AZ2003_Fubon_ACA_Volume_Demo_Addon.md) | Volume（Azure Files）詳細說明 |
-| [`AZ2003_Fubon_Dapr_vs_DirectURL_Notes.md`](AZ2003_Fubon_Dapr_vs_DirectURL_Notes.md) | Dapr vs 直接呼叫 URL 差異說明 |
-| [`docs/AZ2003_Fubon_ACA_LiveDemo_MASTER_AllIntegrated.md`](docs/AZ2003_Fubon_ACA_LiveDemo_MASTER_AllIntegrated.md) | 舊版整合文件 |
+| [`AZ2003_Fubon_ACA_Volume_Demo_Addon.md`](AZ2003_Fubon_ACA_Volume_Demo_Addon.md) | Volume（Azure Files）詳細說明與常見坑 |
+| [`AZ2003_Fubon_Dapr_vs_DirectURL_Notes.md`](AZ2003_Fubon_Dapr_vs_DirectURL_Notes.md) | Dapr 原理與直接呼叫 URL 差異（排錯必讀） |
 
 ---
 
