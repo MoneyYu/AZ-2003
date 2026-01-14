@@ -74,8 +74,17 @@ resource "azurerm_container_app_environment" "lab" {
   tags = local.default_tags
 }
 
+resource "azurerm_container_app_environment_storage" "lab" {
+  name                         = "labacavolume"
+  container_app_environment_id = azurerm_container_app_environment.lab.id
+  account_name                 = azurerm_storage_account.lab.name
+  share_name                   = azurerm_storage_share.lab.name
+  access_key                   = azurerm_storage_account.lab.primary_access_key
+  access_mode                  = "ReadWrite"
+}
+
 resource "azurerm_container_app" "lab" {
-  name                         = "${local.lab_name}-aca-${local.random_str}"
+  name                         = "${local.lab_name}-aca-app-${local.random_str}"
   container_app_environment_id = azurerm_container_app_environment.lab.id
   resource_group_name          = azurerm_resource_group.rg.name
   revision_mode                = "Single"
@@ -86,8 +95,47 @@ resource "azurerm_container_app" "lab" {
       image  = "mcr.microsoft.com/k8se/quickstart:latest"
       cpu    = 0.25
       memory = "0.5Gi"
+
+      volume_mounts {
+        name = "azure-files-volume"
+        path = "/mnt/fileshare"
+      }
+
+      volume_mounts {
+        name = "ephemeral-volume"
+        path = "/mnt/temp"
+      }
+    }
+
+    volume {
+      name         = "azure-files-volume"
+      storage_type = "AzureFile"
+      storage_name = azurerm_container_app_environment_storage.lab.name
+    }
+
+    volume {
+      name         = "ephemeral-volume"
+      storage_type = "EmptyDir"
     }
   }
 
   tags = local.default_tags
+}
+
+# Azure Storage Account
+resource "azurerm_storage_account" "lab" {
+  name                     = "${local.lab_name}stor${local.random_str}"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  tags = local.default_tags
+}
+
+# Azure Storage file share intergration with ACA volume
+resource "azurerm_storage_share" "lab" {
+  name                 = "labshare${local.random_str}"
+  storage_account_name = azurerm_storage_account.lab.name
+  quota                = 50
 }

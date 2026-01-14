@@ -35,7 +35,7 @@ variable "user_name" {
   default = "demouser"
 }
 
-variable "user_passowrd" {
+variable "user_password" {
   type    = string
   default = "Azuredemo2020"
 }
@@ -43,9 +43,9 @@ variable "user_passowrd" {
 locals {
   group_name = "AZ2003-${var.group_postfix}"
   location   = "japaneast"
-  random_str = "bag"
+  random_str = "cat"
   # random_str               = random_string.rid.result
-  lab_name               = "lab"
+  lab_name                 = "lab"
   lab01_name               = "lab01"
   lab02_name               = "lab02"
   lab03_name               = "lab03"
