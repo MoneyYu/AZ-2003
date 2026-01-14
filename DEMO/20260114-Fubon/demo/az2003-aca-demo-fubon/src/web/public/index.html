@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fubon ePolicy Quote - ACA Demo</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans TC',sans-serif; margin:40px;}
+    .row{display:flex; gap:12px; flex-wrap:wrap;}
+    label{display:block; font-size:14px; margin-bottom:6px;}
+    input{padding:10px; min-width:180px;}
+    button{padding:10px 14px; cursor:pointer;}
+    pre{background:#0b1020; color:#d5e2ff; padding:16px; border-radius:10px; overflow:auto;}
+  </style>
+</head>
+<body>
+  <h1>台灣富邦｜ePolicy Quote Demo (ACA)</h1>
+  <p>按「版本資訊」看 version/revision/label；按「產生報價」呼叫 quote-api（Dapr or direct）。</p>
+  <div class="row">
+    <div><label>年齡 age</label><input id="age" type="number" value="35" /></div>
+    <div><label>保額 coverage (NTD)</label><input id="coverage" type="number" value="1000000" /></div>
+    <div><label>年期 term (year)</label><input id="term" type="number" value="20" /></div>
+    <div style="align-self:flex-end">
+      <button id="btn">產生報價</button>
+      <button id="ver">版本資訊</button>
+    </div>
+  </div>
+  <h3>輸出</h3>
+  <pre id="out">(尚未呼叫)</pre>
+
+<script>
+async function getJson(url){
+  const r = await fetch(url);
+  return r.json();
+}
+
+document.getElementById('btn').onclick = async () => {
+  const age = document.getElementById('age').value;
+  const coverage = document.getElementById('coverage').value;
+  const term = document.getElementById('term').value;
+  const data = await getJson(`/api/quote?age=${age}&coverage=${coverage}&term=${term}`);
+  document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+};
+
+document.getElementById('ver').onclick = async () => {
+  const data = await getJson(`/api/version`);
+  document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+};
+</script>
+</body>
+</html>
