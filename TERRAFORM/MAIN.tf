@@ -124,6 +124,7 @@ resource "azurerm_resource_group" "rg" {
   }
 }
 
+# Demo Resource Group
 resource "azurerm_resource_group" "demo" {
   name     = "Demo${var.group_postfix}"
   location = local.location
